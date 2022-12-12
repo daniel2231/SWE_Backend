@@ -2,21 +2,27 @@ from django.db import models
 
 # Problems model
 class Problem (models.Model):
-    problem_id = models.IntegerField()
-    problem_content = models.TextField()
-    skeleton_code = models.TextField()
-    # class_name = models.ForeignKey(Class, related_name='questions', on_delete=models.CASCADE)
+    problem_id = models.IntegerField(primary_key=True)
+    problem_name = models.CharField(max_length=100)
+    problem_content = models.TextField(default="")
+    problem_restrictions = models.TextField(default="")
+    skeleton_code = models.TextField(default="")
+    answer = models.TextField(default="")
+    due_date = models.DateTimeField(default="")
+
 
 # Results with completed scores
 class Completed (models.Model):
-    # problem_id = models.ForeignKey(Problem, related_name='completed', on_delete=models.CASCADE)
-    metric = models.IntegerField()
-    copy = models.IntegerField()
-    readability = models.IntegerField()
-    score = models.IntegerField()
+    completed_id = models.IntegerField(primary_key=True)
+    problem_id = models.ForeignKey(Problem, on_delete=models.CASCADE)
+    metric = models.IntegerField(default="")
+    copy = models.IntegerField(default="")
+    readability = models.IntegerField(default="")
+    score = models.IntegerField(default="")
 
 # Unit Test model
 class UnitTest (models.Model):
-    # problem_id = models.ForeignKey(Problem, related_name='unit_tests', on_delete=models.CASCADE)
-    test_id = models.IntegerField()
-    test_content = models.TextField()
+    test_id = models.IntegerField(primary_key=True)
+    problem_id = models.ForeignKey(Problem, on_delete=models.CASCADE)
+    test_content = models.TextField(default="")
+    test_answer = models.TextField(default="")
