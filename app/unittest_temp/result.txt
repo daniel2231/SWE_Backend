@@ -1,5 +1,8 @@
+/usr/local/Cellar/python@3.9/3.9.12/Frameworks/Python.framework/Versions/3.9/lib/python3.9/unittest/case.py:550: ResourceWarning: unclosed file <_io.TextIOWrapper name='./app/unittest_temp/output.txt' mode='r' encoding='UTF-8'>
+  method()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
 .
 ----------------------------------------------------------------------
-Ran 1 test in 0.000s
+Ran 1 test in 0.003s
 
 OK

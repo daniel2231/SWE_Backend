@@ -20,14 +20,17 @@ class CustomTests(unittest.TestCase):
 
         file = open('./app/unittest_temp/output.txt', 'r')
         right_ans = file.read().split('\n')
-        if len(right_ans) == 1:
-            right_ans = int(right_ans[0])
-        else:
-            right_ans = tuple(map(int, right_ans))
-        file.close()
+        # if its a string, dont convert to int
 
-        ans = code.solution(user_input)
-        print(ans, right_ans)
+        if len(right_ans) == 1:
+            right_ans = right_ans[0]
+        else:
+            right_ans = tuple(map(str, right_ans))
+
+        # typeof user_input
+
+        # map user input inside solution
+        ans = code.solution(*user_input)
 
         self.assertEqual(ans, right_ans)
 

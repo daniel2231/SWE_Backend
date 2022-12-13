@@ -4,7 +4,7 @@ from rest_framework import serializers
 class ProblemSerializer(serializers.ModelSerializer):
     class Meta:
         model = Problem
-        fields = ('problem_id','problem_name','problem_restrictions', 'problem_content', 'skeleton_code', 'answer', 'due_date')
+        fields = ('problem_id','problem_name','problem_restrictions', 'problem_content', 'skeleton_code', 'answer', 'due_date', 'video_recommendations', 'question_recommendations', 'study_recommendations')
 
 class CompletedSerializer(serializers.ModelSerializer):
     class Meta:

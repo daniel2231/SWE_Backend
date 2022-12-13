@@ -1,8 +1,8 @@
 def solution(x,y):
     if x > y:
-	    return "=="
+	    return ">"
     elif x<y:
-        return "=="
+        return "<"
     else:
 	    return "=="
 
